@@ -1,0 +1,80 @@
+{
+  "name": "@isdk/ai-quickstart",
+  "private":"true",
+  "description": "The AI Agent for ISDK Language",
+  "version": "0.1.0",
+  "author": "Riceball LEE <snowyu.lee@gmail.com>",
+  "homepage": "https://github.com/isdk/ai-quickstart.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/isdk/ai-quickstart.js.git"
+  },
+  "type": "module",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build-fast": "tsup",
+    "build": "pnpm run build-fast",
+    "clean": "rm -fr web docs dist",
+    "doc": "typedoc --plugin none --out web",
+    "doc:md": "typedoc --plugin typedoc-plugin-markdown --out docs",
+    "style": "pnpm run format -c && pnpm run lint",
+    "style:fix": "pnpm run format:fix && npm run lint:fix",
+    "format": "prettier \"**/*.{ts,tsx,js,jsx,css,scss,sass,less,md}\"",
+    "format:fix": "pnpm run format --write",
+    "lint": "eslint .",
+    "lint:fix": "pnpm run lint --fix",
+    "test": "FORCE_COLOR=1 vitest run",
+    "release": "pnpm run clean && pnpm run build && pnpm dlx commit-and-tag-version -s",
+    "release.alpha": "pnpm run release -- --prerelease alpha"
+  },
+  "dependencies": {
+    "@isdk/ai-simple-agent": "workspace:*",
+    "@isdk/ai-tool": "workspace:*",
+    "ansicolor": "^2.0.3",
+    "log-update": "^7.0.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.10.1",
+    "@types/jest": "^29.5.14",
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^24.3.0",
+    "@typescript-eslint/eslint-plugin": "~8.41.0",
+    "esbuild-plugin-obfuscator": "^1.2.4",
+    "eslint": "^9.34.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-tsdoc": "^0.4.0",
+    "prettier": "^3.6.2",
+    "terser": "^5.44.0",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.5",
+    "type-fest": "^4.41.0",
+    "typedoc": "^0.28.13",
+    "typedoc-plugin-markdown": "^4.8.1",
+    "typescript": "~5.7.3",
+    "vite": "^7.1.4",
+    "vitest": "^3.2.4"
+  },
+  "files": [
+    "docs",
+    "dist"
+  ],
+  "keywords": [
+    "offline-ai",
+    "isdk",
+    "ppe",
+    "runner"
+  ],
+  "maintainers": [
+    "Riceball LEE <snowyu.lee@gmail.com>"
+  ],
+  "engines": {
+    "node": ">=20.11.1"
+  },
+  "types": "./dist/index.d.ts"
+}

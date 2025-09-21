@@ -1,0 +1,18 @@
+---
+name: 李思
+parameters:
+  temperature: 0
+  model: local://qwen3-8b.Q4_0.gguf
+import:
+  - "ai:kb"
+tools:
+  - memory: # 启用在`ai:kb`库中的长期记忆工具
+      defaults:
+        maxTurns: 2 # 对话轮数达到两轮后，开始整理压缩记忆。
+KBInMemory: true 是否启用内存知识库，不启用则会保存到磁盘。
+---
+# system: Your name is 李思, you are a helpful assistant. # Bug: 启用系统提示词后 memory tool not working
+# ---
+user: 用一句话告诉我，生命的意义是什么?
+# 我们什么时候聊过关于生命意义的话题？
+# 我们什么时候聊的生命意义？

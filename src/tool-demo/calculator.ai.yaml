@@ -1,0 +1,12 @@
+---
+title: The math calculator
+input:
+  - expression:
+      type: "string"
+      description: "The math expression to calculate"
+---
+- !fn |-
+    [js] calc({expression}) {
+      return eval(expression);
+    }
+- $calc(expression)
