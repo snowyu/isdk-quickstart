@@ -7,10 +7,11 @@ import { beforeShutdown } from '@isdk/ai-tool';
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
+// 注册本地Provider并提供默认模型文件路径, GGUF 模型文件放这里
 const brainDir = '~/.local/share/ai/brain/'
 await register({brainDir})
 
-{ // 监听加载模型进度
+{ // 监听本地Provider的加载模型进度事件
   let loading: boolean|undefined
   AIEventBus.on(LocalProviderProgressEventName, (progress: number, {filepath, type}: {filepath: string, type: string}) => {
     if (!loading) {

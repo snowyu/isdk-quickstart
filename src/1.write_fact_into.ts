@@ -8,11 +8,11 @@ import { beforeShutdown } from '@isdk/ai-tool';
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-// 注册本地Provider并提供默认模型文件路径
+// 注册本地Provider并提供默认模型文件路径, GGUF 模型文件放这里
 const brainDir = '~/.local/share/ai/brain/'
 await register({brainDir})
 
-{ // 监听加载模型进度
+{ // 监听本地Provider的加载模型进度事件
   let loading: boolean|undefined
   AIEventBus.on(LocalProviderProgressEventName, (progress: number, {filepath, type}: {filepath: string, type: string}) => {
     if (!loading) {
@@ -34,7 +34,7 @@ if (fs.existsSync(path.join(__dirname, 'char_lisi.ai'))) {
   AIAgent.logLevel = 'debug'
   const agentScript = await AIAgent.loadFile(path.join(__dirname, 'char_lisi.ai.yaml'))
   const runtime = await agentScript.getRuntime(false);
-  runtime.KBInMemory = true
+  // runtime.KBInMemory = true # 也可在这里决定是否启用内存数据库
 
   agentScript.llmStream = false // 是否启用流式输出，启用后会触发 'llmStream' 事件
   // agentScript.autoRunLLMIfPromptAvailable = false // 禁止在脚本最后自动运行 LLM 模型，因为这里需要我们手动交互执行

@@ -1,6 +1,6 @@
 {
   "name": "@isdk/ai-quickstart",
-  "private":"true",
+  "private": "true",
   "description": "The AI Agent for ISDK Language",
   "version": "0.1.0",
   "author": "Riceball LEE <snowyu.lee@gmail.com>",
@@ -34,7 +34,7 @@
     "release.alpha": "pnpm run release -- --prerelease alpha"
   },
   "dependencies": {
-    "@isdk/ai-simple-agent": "^0.1.5",
+    "@isdk/ai-simple-agent": "^0.1.6",
     "@isdk/ai-tool": "^0.8.0",
     "ansicolor": "^2.0.3",
     "log-update": "^7.0.0"
