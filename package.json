@@ -34,7 +34,7 @@
     "release.alpha": "pnpm run release -- --prerelease alpha"
   },
   "dependencies": {
-    "@isdk/ai-simple-agent": "^0.1.6",
+    "@isdk/ai-simple-agent": "^0.1.7",
     "@isdk/ai-tool": "^0.8.0",
     "ansicolor": "^2.0.3",
     "log-update": "^7.0.0"

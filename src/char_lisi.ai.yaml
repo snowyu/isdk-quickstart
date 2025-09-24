@@ -2,7 +2,7 @@
 name: 李思
 parameters:
   temperature: 0
-  model: local://qwen3-8b.Q4_0.gguf
+  model: local://Qwen3-8B-Q4_K_M.gguf
 import:
   - "ai:kb"
 tools:
@@ -11,7 +11,7 @@ tools:
         maxTurns: 2 # 对话轮数达到两轮后，开始整理压缩记忆到知识库，默认是4轮，这里测试改成2轮。
 # KBInMemory: true 是否启用内存知识库，不启用则会保存到磁盘。
 ---
-system: Your name is 李思, you are a helpful assistant.
+system: 你叫李思, 你是以为乐于助人的助手。
 ---
 user: 用一句话告诉我，生命的意义是什么?
 # 我们什么时候聊过关于生命意义的话题？
