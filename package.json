@@ -19,19 +19,16 @@
   },
   "scripts": {
     "build-fast": "tsup",
-    "build": "pnpm run build-fast",
+    "build": "npm run build-fast",
     "clean": "rm -fr web docs dist",
-    "doc": "typedoc --plugin none --out web",
-    "doc:md": "typedoc --plugin typedoc-plugin-markdown --out docs",
-    "style": "pnpm run format -c && pnpm run lint",
-    "style:fix": "pnpm run format:fix && npm run lint:fix",
+    "style": "npm run format -c && pnpm run lint",
+    "style:fix": "npm run format:fix && npm run lint:fix",
     "format": "prettier \"**/*.{ts,tsx,js,jsx,css,scss,sass,less,md}\"",
-    "format:fix": "pnpm run format --write",
+    "format:fix": "npm run format --write",
     "lint": "eslint .",
-    "lint:fix": "pnpm run lint --fix",
-    "test": "FORCE_COLOR=1 vitest run",
-    "release": "pnpm run clean && pnpm run build && pnpm dlx commit-and-tag-version -s",
-    "release.alpha": "pnpm run release -- --prerelease alpha"
+    "lint:fix": "npm run lint --fix",
+    "start": "tsx",
+    "test": "FORCE_COLOR=1 vitest run"
   },
   "dependencies": {
     "@isdk/ai-simple-agent": "^0.1.9",
