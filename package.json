@@ -34,8 +34,8 @@
     "release.alpha": "pnpm run release -- --prerelease alpha"
   },
   "dependencies": {
-    "@isdk/ai-simple-agent": "^0.1.7",
-    "@isdk/ai-tool": "^0.8.0",
+    "@isdk/ai-simple-agent": "^0.1.9",
+    "@isdk/ai-tool": "^0.8.2",
     "ansicolor": "^2.0.3",
     "log-update": "^7.0.0"
   },
@@ -45,7 +45,7 @@
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^24.3.0",
     "@typescript-eslint/eslint-plugin": "~8.41.0",
-    "esbuild-plugin-obfuscator": "^1.2.4",
+    "esbuild-plugin-obfuscator": "^1.4.0",
     "eslint": "^9.34.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-tsdoc": "^0.4.0",
