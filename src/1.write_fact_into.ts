@@ -30,8 +30,8 @@ if (fs.existsSync(path.join(__dirname, 'char_lisi.ai'))) {
 }
 
 { // 配置运行智能体脚本
-  // AIAgent.logLevel = 'silence'
-  AIAgent.logLevel = 'debug'
+  AIAgent.logLevel = 'silence'
+  // AIAgent.logLevel = 'debug'
   const agentScript = await AIAgent.loadFile(path.join(__dirname, 'char_lisi.ai.yaml'))
   const runtime = await agentScript.getRuntime(false);
   // runtime.KBInMemory = true # 也可在这里决定是否启用内存数据库
